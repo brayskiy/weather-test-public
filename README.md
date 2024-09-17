@@ -19,10 +19,6 @@
 * Uses location API
     - firebase
 
-### Future work
-* Improve UI themes and styles
-* Use data visualization 
-
 ### Satisfied requirements:
 * Uses [OpenWeather's REST API](https://api.openweathermap.org) to build an Android application that displays the current weather in New York.
 * Retrieves the weather information [API](https://openweathermap.org).
