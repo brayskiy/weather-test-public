@@ -1,0 +1,4 @@
+include ':app',
+        ':feature:weather',
+        ':library:core'
+rootProject.name = "WeatherChallenge"

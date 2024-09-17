@@ -1,0 +1,120 @@
+ext {
+    appId = "com.example.android_challenge"
+    dimensionFlavor = "tier"
+
+    minSdk = 26
+    targetSdk = 33
+    compileSdk = 33
+
+    renderscriptTargetApiVersion = 21
+
+    verCode = 20240916
+    verName = "0.0.1"
+
+    kotlinVersion = "1.9.24"
+    kotlinxVersion = "1.8.0"
+    gradleVersion = '8.0.0'
+    googleServicesVersion = "3.2.0"
+
+    appCompatVersion = "1.1.0"
+    appCompatAnnotationVersion = "1.1.0"
+    appCompatCardViewVersion = "1.0.0"
+    appCompatRecyclerViewVersion = "1.1.0"
+
+    multidexVersion = '2.0.1'
+    multidexInstrumentationVersion = '2.0.0'
+
+    materialDesignVersion = "1.1.0"
+    constraintLayoutVersion = "2.0.0-rc1"
+    coreVersion = "1.10.1"
+
+    legacySupportVersion = "1.0.0"
+    lifeCycleVersion = "2.2.0-alpha01"
+
+    daggerVersion = '2.24'
+    glideVersion = "4.16.0"
+    retrofitVersion = "2.7.0"
+    okhttpVersion = "4.3.1"
+    gsonVersion = "2.8.5"
+
+    arrowVersion = "0.10.5"
+
+    junitVersion = "1.1.1"
+    testRunnerVersion = "1.3.0-alpha02"
+    testRulesVersion = "1.2.0"
+    testCoreVersion = "1.2.0"
+    espressoVersion = "3.2.0-alpha02"
+    junitJupiterVersion = "5.6.1"
+    mockkVersion = "1.10.0"
+
+    config = [
+            baseUrlDebug   : "\"https://api.openweathermap.org\"",
+            baseUrlRelease : "\"https://api.openweathermap.org\"",
+            iconUrl        : "\"https://openweathermap.org/img/wn/\""
+    ]
+
+    appLib = [
+            arrow                 : "io.arrow-kt:arrow-fx:${arrowVersion}",
+
+            dagger                : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerAndroid         : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:${daggerVersion}",
+
+            retrofit              : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGson          : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitAdapter       : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitMoshiConverter: "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+
+            okHttp                : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okHttpLogger          : "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
+
+            gson                  : "com.google.code.gson:gson:${gsonVersion}",
+
+            glide                 : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler         : "com.github.bumptech.glide:compiler:${glideVersion}"
+    ]
+
+    supportLib = [
+            appCompat             : "androidx.appcompat:appcompat:${appCompatVersion}",
+            materialDesign        : "com.google.android.material:material:${materialDesignVersion}",
+            recyclerView          : "androidx.recyclerview:recyclerview:${appCompatRecyclerViewVersion}",
+            cardView              : "androidx.cardview:cardview:${appCompatCardViewVersion}",
+            multidex              : "androidx.multidex:multidex:${multidexVersion}",
+            multidexInstumentation: "androidx.multidex:multidex-instrumentation:${multidexInstrumentationVersion}",
+            constraintLayout      : "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
+            core                  : "androidx.core:core:${coreVersion}",
+            ktx                   : "androidx.core:core-ktx:${coreVersion}",
+            legacySupport         : "androidx.legacy:legacy-support-v4:${legacySupportVersion}",
+            lifeCycleExtensions   : "androidx.lifecycle:lifecycle-extensions:${lifeCycleVersion}",
+            lifeCycleRuntimeKtx   : "androidx.lifecycle:lifecycle-runtime-ktx:${lifeCycleVersion}",
+            lifeCycleLiveDataKtx  : "androidx.lifecycle:lifecycle-livedata-ktx:${lifeCycleVersion}",
+
+            // Kotlin coroutines
+            coroutinesCore        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinxVersion}",
+            coroutinesAndroid     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlinxVersion}",
+            coroutinesRx          : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${kotlinxVersion}",
+            coroutinesTest        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${kotlinxVersion}"
+    ]
+
+    testLib = [
+            junit                        : "androidx.test.ext:junit:${junitVersion}",
+            testRunner                   : "androidx.test:runner:${testRunnerVersion}",
+            testRules                    : "androidx.test:rules:${testRulesVersion}",
+            testCore                     : "androidx.test:core:${testCoreVersion}",
+            espressoCore                 : "androidx.test.espresso:espresso-core:${espressoVersion}",
+            junitJupiterApi              : "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}",
+            junitJupiterEngine           : "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}",
+            junitVintageEngine           : "org.junit.vintage:junit-vintage-engine:${junitJupiterVersion}",
+            junitIntellijPlatformLauncher: "org.junit.platform:junit-platform-launcher:1.6.1",
+            mockk                        : "io.mockk:mockk:${mockkVersion}",
+            mockkAndroid                 : "io.mockk:mockk-android:${mockkVersion}"
+    ]
+
+    projectLib = [
+            kotlinStdLib : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            kotlinReflect: "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
+    ]
+}

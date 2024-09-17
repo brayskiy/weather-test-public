@@ -1,0 +1,28 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: rootProject.file(".scripts/mockk-junit5.gradle")
+
+android {
+    compileSdkVersion project.compileSdk
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        minSdkVersion project.minSdk
+        targetSdkVersion project.targetSdk
+
+        versionCode project.verCode
+        versionName project.verName
+    }
+}
+
+dependencies {
+    implementation projectLib.kotlinStdLib
+    implementation projectLib.kotlinReflect
+}
+
+repositories {
+}
