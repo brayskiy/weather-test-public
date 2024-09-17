@@ -1,0 +1,35 @@
+<resources>
+    <string name="weather_forecast">Weather Forecast</string>
+
+    <string name="first_fragment_label">Current Weather</string>
+    <string name="second_fragment_label">Weather Forecast</string>
+
+    <string name="current_weather_location">%1$s</string>
+    <string name="current_weather_temperature">Current Temperature: %1$.1fF</string>
+    <string name="current_weather_feels_like">Feels Like: %1$.1fF</string>
+    <string name="current_weather_humidity">Humidity: %1$d\%%</string>
+    <string name="current_weather_wind_speed">Wind: %1$.1f mph / %2$s</string>
+    <string name="current_weather_atmospheric_pressure">Atmospheric pressure: %1$d hPa</string>
+
+    <string name="daily_weather_temperature">Day Temperature: %1$.1fF</string>
+    <string name="daily_weather_feels_like">Feels Like: %1$.1fF</string>
+    <string name="daily_weather_humidity">Humidity: %1$d\%%</string>
+    <string name="daily_weather_wind_speed">Wind: %1$.1fmph/%2$s</string>
+    <string name="daily_weather_atmospheric_pressure">Atmospheric pressure: %1$dhPa</string>
+
+    <string name="ok">OK</string>
+    <string name="no">NO</string>
+    <string name="cancel">CANCEL</string>
+
+    <!-- Error strings -->
+    <string name="general_error_title">Error</string>
+    <string name="general_error_message">Something goes wrong. Try again later.</string>
+
+    <string name="exit_title">Exit</string>
+    <string name="exit_message">The application will be closed.</string>
+
+    <string name="dialog_under_construction_title">Under construction</string>
+    <string name="dialog_under_construction_message">This feature is under construction till right now. Try again later.</string>
+
+
+</resources>

@@ -1,0 +1,95 @@
+apply plugin: 'com.android.library'
+apply from: rootProject.file('module.gradle')
+
+android {
+    namespace 'library.core'
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        buildConfigField 'long', 'BUILD_DATE', System.currentTimeMillis() + "L"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', config.baseUrlRelease
+            buildConfigField 'String', 'ICON_URL', config.iconUrl
+        }
+
+        debug {
+            buildConfigField 'String', 'BASE_URL', config.baseUrlDebug
+            buildConfigField 'String', 'ICON_URL', config.iconUrl
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'ResourceType', 'GoogleAppIndexingWarning', 'HardcodedText', 'InvalidPackage'
+        textReport true
+        textOutput "stdout"
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation projectLib.kotlinStdLib
+    implementation projectLib.kotlinReflect
+
+    implementation supportLib.multidex
+    implementation supportLib.appCompat
+    implementation supportLib.ktx
+    implementation supportLib.materialDesign
+
+    implementation supportLib.coroutinesCore
+    implementation supportLib.coroutinesAndroid
+
+    implementation supportLib.lifeCycleExtensions
+    implementation supportLib.constraintLayout
+
+    implementation appLib.glide
+    implementation appLib.dagger
+    implementation appLib.daggerAndroid
+    implementation appLib.daggerAndroidSupport
+    kapt appLib.daggerAndroidProcessor
+    kapt appLib.daggerCompiler
+
+    implementation appLib.arrow
+
+    implementation appLib.retrofit
+    implementation appLib.retrofitGson
+    implementation appLib.retrofitGsonConverter
+    implementation appLib.retrofitMoshiConverter
+
+    implementation appLib.okHttp
+    implementation appLib.okHttpLogger
+    implementation appLib.gson
+
+    testImplementation testLib.junit
+    androidTestImplementation testLib.testRunner
+    implementation testLib.junitJupiterApi
+    testRuntimeOnly testLib.junitJupiterEngine
+    implementation testLib.mockk
+}
+
+repositories {
+    mavenCentral()
+}

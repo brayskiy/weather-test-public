@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+apply from: rootProject.file('module.gradle')
+
+android {
+    namespace 'com.example.android_challenge'
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId project.appId
+
+        vectorDrawables.useSupportLibrary = true
+
+        renderscriptTargetApi renderscriptTargetApiVersion
+        renderscriptSupportModeEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            crunchPngs false
+            debuggable true
+            buildConfigField 'String', 'BASE_URL', config.baseUrlRelease
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            crunchPngs false
+            buildConfigField 'String', 'BASE_URL', config.baseUrlDebug
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions{
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/LICENSE-notice.md'
+    }
+
+    lintOptions {
+        disable "ResourceType"
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':feature:weather')
+    implementation project(":library:core")
+
+    implementation supportLib.appCompat
+    implementation supportLib.ktx
+    implementation supportLib.constraintLayout
+
+    implementation supportLib.lifeCycleExtensions
+
+    implementation supportLib.coroutinesCore
+    implementation supportLib.coroutinesAndroid
+
+    implementation appLib.dagger
+    implementation appLib.daggerAndroid
+    implementation appLib.daggerAndroidSupport
+    kapt appLib.daggerAndroidProcessor
+    kapt appLib.daggerCompiler
+
+    implementation appLib.retrofit
+    implementation appLib.retrofitGson
+    implementation appLib.retrofitGsonConverter
+
+    implementation appLib.okHttp
+    implementation appLib.okHttpLogger
+    implementation appLib.gson
+
+    testImplementation testLib.junit
+    androidTestImplementation testLib.testRunner
+    testImplementation testLib.junitJupiterApi
+    testRuntimeOnly testLib.junitJupiterEngine
+    testImplementation testLib.mockk
+}
+
+repositories {
+    mavenCentral()
+}

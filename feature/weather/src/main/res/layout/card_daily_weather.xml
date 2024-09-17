@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/cardStyle"
+    android:id="@+id/weatherCardContainer"
+    app:cardCornerRadius="@dimen/small_radius"
+    app:cardElevation="@dimen/small_space">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium_space"
+        android:layout_marginRight="@dimen/medium_space"
+        android:padding="@dimen/small_space">
+
+        <TextView
+            android:id="@+id/dailyWeatherDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dailyWeatherTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyWeatherDate" />
+
+        <TextView
+            android:id="@+id/dailyWeatherFeelsLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyWeatherTemperature" />
+
+        <TextView
+            android:id="@+id/dailyWeatherHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyWeatherFeelsLike" />
+
+        <TextView
+            android:id="@+id/dailyWeatherWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyWeatherHumidity" />
+
+        <TextView
+            android:id="@+id/dailyWeatherPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_space"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyWeatherWind" />
+
+        <ImageView
+            android:id="@+id/drinkChevron"
+            android:layout_width="@dimen/tiny_image"
+            android:layout_height="@dimen/tiny_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_right_thin_chevron" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
