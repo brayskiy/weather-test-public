@@ -1,4 +1,4 @@
-# One Drop Android Coding Challenge (Boris Rayskiy)
+# Android Coding Challenge (Boris Rayskiy)
 
 ### This coding challenge demonstrates:
 * Multi-module Android application 
