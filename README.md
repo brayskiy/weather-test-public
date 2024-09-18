@@ -1,4 +1,4 @@
-# Android Coding Challenge (Boris Rayskiy)
+# Weather test app (Boris Rayskiy)
 
 ### This coding challenge demonstrates:
 * Multi-module Android application 
